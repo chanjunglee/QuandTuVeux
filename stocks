@@ -1,5 +1,5 @@
 # stocks programming with python
-# i use CreonPlus on its API
+# i use CreonPlus on its API with pyhton
 # so i'm gonna treat like those, just within first chapter: 
 
 1. to represent some libraries that needed to the developement
@@ -7,8 +7,21 @@
 3. to load specific stocks from names, prices, volumes etc. moreover according to several conditions you make
 
 the code provided by Daishin Securities is as follows.
-1. 
+1. win32com library is that help you some programs are able to control as an 'object' in your space 
+  so you can connect and control programs on your OS in python. 
+  for example, if you code "import win32com.client" at python, you can treat creon-hts in your python ground.
+  in this case, in python com object is created.
+  
 
-2. 
-
+2. import win32com.client
+ 
+ 
+  # 연결 여부 체크
+  objCpCybos = win32com.client.Dispatch("CpUtil.CpCybos")
+  # 
+  bConnect = objCpCybos.IsConnect
+  # CreonPlus 
+  if (bConnect == 0):
+    print("PLUS가 정상적으로 연결되지 않음. ")
+    exit() # exit() 실행되고 있는 코드를 종료시키는 함수  
 3. 
