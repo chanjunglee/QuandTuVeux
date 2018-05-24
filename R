@@ -1,35 +1,54 @@
-the more is the better. for someone who see those, i did. 
+the more is the better. for someone who see those, like i have been helped. 
 
 #data directory 설정
-setwd()
+setwd()   ***
 #ex) setwd(c:/data)
 # 확인
 getwd()
 
 #data 가져오기
-emp<-read.csv("emp.csv",header=T)
+emp<-read.csv("emp.csv",header=T)   ***
 emp<-read.csv("c:/data/emp.csv",header=T)
 emp<-read.csv(file.choose())
 
 # 기본정보 출력
-str(emp)
-dim(emp)
-head(emp)
-names(emp)
+str(emp)    ***
+ls(emp)
+ls.str(emp)
+dim(emp)    ***
+head(emp)   ***
+names(emp)  ***
 colnames(emp)
 nrow(emp)
-summary(emp)
+summary(emp)  ***
 
 # 기본 전체테이블 출력
 emp
 emp[,]
 show(emp)
+table(emp)
+
+
 
 # 형식
+
 # vector
 x<-(1:9)
 x<-c(1,2,3,4,5,6,7,8,9)
-#metrix
+x<-c(rep(1,5),2,rep(3,6))
+
+x[1,4]
+x[-3]
+x[c(-3,-4)]
+
+x<-c(1,3,4)
+names(x)<-c("scott","king","jones")
+x<-c("scott"=1, "king"=3, "jones"=4)
+
+# factor
+
+
+#matrix
 x<-matrix(1:9, ncol=3)
 #data.frame
 str(emp)
@@ -46,13 +65,21 @@ emp[emp$ename=='KING',c("ename","job")]
 library(data.table)
 data.table(emp$empno, emp$hiredate)
 
-#na 값 처리
 
+
+# na 값 처리
+is.na(emp$comm)
+data.frame(emp$comm, na.rm=T)
+sum(emp$sal, na.rm = T)
+length(na.omit(emp$comm))
+colSums(is.na(emp))
 
 
 #가로, 세로 바꾸기
 x
 t(x)
+
+
 
 
 
