@@ -10,6 +10,7 @@ getwd()
 emp<-read.csv("emp.csv",header=T)   ***
 emp<-read.csv("c:/data/emp.csv",header=T)
 emp<-read.csv(file.choose())
+emp<-fread.csv("emp.csv") # when it's amount of size
 
 # 기본정보 출력
 str(emp)    ***
