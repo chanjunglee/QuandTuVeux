@@ -1,11 +1,24 @@
-# perspectation
+# "통계학개론"'s summary
 
-# mainly conceptions
+# 1. data and statics
 
-# population 
+# statics
+A study of collecting relevant data on the target's object and summarizing and arranging the data 
+to find out conclusions or general rules of uncertainty.
+
+- two types in statics
+1. descriptive statics : the way of getting entirely attributes by summarizing with tables, graphs, numeric values that represented data.  
+2. inferential statics : the way of inferenting and generizing the analized data from randomly samples of total.  
+
+# key words
+
+population 
   meaning : all target that for analysis 
   - type : infinite pop  / finite pop
 
-# sample
-  - 
-# 
+sample
+  - some of population
+  the reason samples are selected randomly(in random sampling) from total sometimes how much do these samples represent to populations can be an important matter. 
+  cuz this is related with whether we accept the analized results or not.
+
+
