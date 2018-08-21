@@ -13,12 +13,54 @@ to find out conclusions or general rules of uncertainty.
 # key words
 
 population 
-  meaning : all target that for analysis 
+ - all target that for analysis 
   - type : infinite pop  / finite pop
 
 sample
-  - some of population
-  the reason samples are selected randomly(in random sampling) from total sometimes how much do these samples represent to populations can be an important matter. 
+ - some of population
+  the reason samples are selected randomly(in random sampling) from total 
+  sometimes how much do these samples represent to populations can be an important matter. 
   cuz this is related with whether we accept the analized results or not.
 
+parameter
+ - numerical characteristic value of population
+ 
+ statistic
+  - numerical characteristic value of sample
+ 
+unit
+ - item of object to be obseved
+ 
+observation
+ - information or characteristics are written from each observation's unit.
+ 
+  
+data
+  - combining of observations
+ 
+variable
+  - characteristics measured for each unit
+  - type : 1. qualitative variable  
+              a. nominal , b. ordinal 
+           2. quantitative variable 
+              a. discrete , b. countinous
+              
+# frequency (distribution) table
+  a table that arranged to count each class frequency of data's values or data belongs in each divided sections of the total
+  
+# graph and plot
+  - qaulititive data 1. pie chart 2. bold bar graph
+  - quantatitive data 2. histogram 2. stem-and-leaf plot 3. dot plot(* outlier) 4. time series plot(*trend *seasonal variation)
+  
+ 
 
+ 
+# summary of data
+ - mean / median / mode 
+ - measure of variability(measure of spread) / range / interquartile range(IQR) / percentile / five-number-summary / skewness 
+ (what I want to mention shortly here is the way to get outlier. 1.5*IQR )
+ 
+  
+
+  
+  
