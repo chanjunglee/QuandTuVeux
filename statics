@@ -2,81 +2,107 @@
 
 # 1. data and statics
 
-# statics
+# statics 통계
 A study of collecting relevant data on the target's object and summarizing and arranging the data 
 to find out conclusions or general rules of uncertainty.
 
 - two types in statics
-1. descriptive statics : the way of getting entirely attributes by summarizing with tables, graphs, numeric values that represented data.  
-2. inferential statics : the way of inferenting and generizing the analized data from randomly samples of total.  
+1. descriptive statics 기술통계
+the way of getting entirely attributes by summarizing with tables, graphs, numeric values that represented data 
+
+2. inferential statics 추측통계
+the way of inferenting and generizing the analized data from randomly samples of total
 
 # key words
 
-population 
+population (*pop)모집단
  - all target that for analysis 
   - type : infinite pop  / finite pop
 
-sample
+sample 표본
  - some of population
   the reason samples are selected randomly(in random sampling) from total 
   sometimes how much do these samples represent to populations can be an important matter. 
   cuz this is related with whether we accept the analized results or not.
 
-parameter
+parameter 모수
  - numerical characteristic value of population
  
- statistic
+ statistic 통계량
   - numerical characteristic value of sample
  
-unit
+unit 단위
  - item of object to be obseved
  
-observation
+observation 관찰값
  - information or characteristics are written from each observation's unit.
- 
-  
-data
+
+data 데이터
   - combining of observations
  
-variable
+variable 변수
   - characteristics measured for each unit
   - type : 1. qualitative variable  
               a. nominal , b. ordinal 
            2. quantitative variable 
               a. discrete , b. countinous
               
-# frequency (distribution) table
+# frequency (distribution) table 도수분포표
   a table that arranged to count each class frequency of data's values or data belongs in each divided sections of the total
   
-# graph and plot
+# graph and plot 그래프
   - qaulititive data 1. pie chart 2. bold bar graph
   - quantatitive data 2. histogram 2. stem-and-leaf plot 3. dot plot(* outlier) 4. time series plot(*trend *seasonal variation)
   
  
-
- 
-# summary of data
- - mean / median / mode 
+#  2. summary of data
+ - mean 평균 / median 중앙값 / mode 최빈값 
  @ which case should we use a "mean" or "median"? what if the "mode"?
  
- - measure of variability(measure of spread) / range / interquartile range(IQR) / percentile / five-number-summary / skewness 
+ - measure of variability(measure of spread) 변동의 측도(산포의 측도) / range 범위 / 
+   interquartile range(IQR) 사분위수범위 / percentile 백분위수 / five-number-summary 다섯 수치요약 / skewness 비대칭도 
  @ above conceptions are related with the "distribution" (of values). 
- @ like how distribution of data is and how many data are located in a specific section.
- @ 
- 
- what i want to mention shortly here is the way to get outlier. 
+ @ like how distribution of data is, how many observations are located in a specific section.
+  
+ what i want to mention shortly here is the way to get outlier(이상치). 
  
  step = 1.5*IQR
  x : observation
  if x < Q1 - (1.5*IQR) or x > Q3 + (1.5*IQR) 
  then, x is defined to "outlier".
  
- # variance and standard deviation
+ # variance(*var) 분산 and standard deviation(*sd) 표준편차
+ 
+- variance(*var) = a square of sd 
+ standard deviation(*sd) = an average of gaps between average and all observations.  
+ 
+ cf. the point is when we get the sd, you should divide (n-1) instead of n.
+     it's said that when it's divided to n-1 is much more representative to pop's sd than it's applied to n(a size of sample)
+ 
+ coefficient of variance 변동계수(변이계수)
+ sometimes when comparing vars(or sds) of two data or more than that, if one data has different units of measurement with another data
+ you need to adjust to each other. coefficient of variance is that.
+ 
+ (pop) C = (var / mean) * 100(%) 
+ (sample) C = (sd / mean) * 100(%)
+ 
+# 3. probability and random variables
+ 
+# key word 
+ 
+ - statistical experiment 통계적 실험
+ 
+ - sample space 표본 공간
+ the set about all possible results in a statistical experiment
+ a side of elements : finite , countably infinte -> discrete sample space
+                      uncountably infinite -> continous sample space
+ 
+ - event 사건
+ a part of the sample space
  
  
  
- 
- 
+  
   
 
   
