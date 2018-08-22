@@ -100,11 +100,29 @@ variable 변수
  - event 사건
  a part of the sample space
  
- - probability 확률
- P(A) = event set elements
+ - probability 확률 
  
+ - classical definition
+ P(A) = the count of event's set elements / the count of sample's set elements
  
+ - relative numerical definition
+ a probability of event A's occurrence is a rate of event A's occurrence 
+ under a statistical experiment repeats infinitely in the same condition
  
+ - axiomatic definition
+ 
+ # calculation of probability 
+ 
+ - permutation
+   any of ways in which a set of things can be ordered.
+   nPr = n(n-1)(n-2)...(n-r+1) = n!/(n-r)!
+   
+ - combination
+   a selection of a set of objects, without regard to the order in which objects are selected
+   nPr / r! = n! / r!(n-r!)
+   
+ - the addition of probability
+   under the mutually exclusive events  배반 사건, P(A U B) = P(A) + P(B) - P(A B)
   
   
 
