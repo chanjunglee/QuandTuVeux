@@ -3,7 +3,7 @@
 # 1. data and statics
 
 # statics 통계
-A study of collecting relevant data on the target's object and summarizing and arranging the data 
+a study of collecting relevant data on the target's object and summarizing and arranging the data 
 to find out conclusions or general rules of uncertainty.
 
 - two types in statics
@@ -113,18 +113,33 @@ variable 변수
  
  # calculation of probability 
  
- - permutation
+ - permutation 순열
    any of ways in which a set of things can be ordered.
    nPr = n(n-1)(n-2)...(n-r+1) = n!/(n-r)!
    
- - combination
+ - combination 조합
    a selection of a set of objects, without regard to the order in which objects are selected
    nPr / r! = n! / r!(n-r!)
    
- - the addition of probability
-   under the mutually exclusive events  배반 사건, P(A U B) = P(A) + P(B) - P(A B)
+ - the addition of probability 확률 덧셈
+   P(A U B) = P(A) + P(B) - P(A ∩ B)
+   if A ∩ B = Φ, it's called the mutually exclusive events  배반 사건
   
-  
-
+ - the condition probability 조건부 확률
+   P(A|B) = P(A∩B)/P(B) / P(B) (only, p(B)>0)
+   
+ - the multiple of probability 확률 곱셈
+   P(A) > 0 and P(B) > 0, P(A ∩ B) = p(A)P(B|A) = P(B)P(A|B)
+   if P(B|A) = P(B) , A and B is called independent event. and then P(A ∩ B) = P(A)P(B)
+   
+ - complement set 여집합
+   P(Ac)= 1 - P(A)
+   
+  # random variable 
+   function to match one real value to each element of sample space
+   
+   when the values of random variable are countable, discrete random variable.
+   when the values of random variable are uncountable, continous random variable.
+   (probability distribution function / cumulative distribution function)
   
   
