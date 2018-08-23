@@ -135,11 +135,15 @@ variable 변수
  - complement set 여집합
    P(Ac)= 1 - P(A)
    
-  # random variable 
+  # random variable 확률변수
    function to match one real value to each element of sample space
    
-   when the values of random variable are countable, discrete random variable.
-   when the values of random variable are uncountable, continous random variable.
+   when the values of random variable are countable, discrete random variable. 이산형 확률 변수
+   when the values of random variable are uncountable, continous random variable. 연속형 확률 변수
    (probability distribution function / cumulative distribution function)
+   @ uniform distribution 균등함수
   
+  # expected value of random variable 기대값
   
+   
+   
