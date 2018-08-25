@@ -3,15 +3,15 @@
 # 1. data and statics
 
 # statics 통계
-a study of collecting relevant data on the target's object and summarizing and arranging the data 
-to find out conclusions or general rules of uncertainty.
+  a study of collecting relevant data on the target's object and summarizing and arranging the data 
+  to find out conclusions or general rules of uncertainty.
 
 - two types in statics
 1. descriptive statics 기술통계
-the way of getting entirely attributes by summarizing with tables, graphs, numeric values that represented data 
+   the way of getting entirely attributes by summarizing with tables, graphs, numeric values that represented data 
 
 2. inferential statics 추측통계
-the way of inferenting and generizing the analized data from randomly samples of total
+   the way of inferenting and generizing the analized data from randomly samples of total
 
 # key words
 
@@ -21,31 +21,36 @@ population (*pop)모집단
 
 sample 표본
  - some of population
-  the reason samples are selected randomly(in random sampling) from total 
-  sometimes how much do these samples represent to populations can be an important matter. 
-  cuz this is related with whether we accept the analized results or not.
+   the reason samples are selected randomly(in random sampling) from total 
+   sometimes how much do these samples represent to populations can be an important matter. 
+   cuz this is related with whether we accept the analized results or not.
 
 parameter 모수
  - numerical characteristic value of population
  
  statistic 통계량
-  - numerical characteristic value of sample
+  - numerical characteristic value of sample. 
+    ex) 175cm(<-statistics) is the meaning of korean's height on 100 guys
  
 unit 단위
  - item of object to be obseved
- 
+   ex) person A : each person that observed 
+   
 observation 관찰값
  - information or characteristics are written from each observation's unit.
-
+   ex) person A's weight
+   
 data 데이터
   - combining of observations
- 
+  ex) the korean(people: this is for a specific purpose) consisted of each person(unit)
+  
 variable 변수
   - characteristics measured for each unit
   - type : 1. qualitative variable  
               a. nominal , b. ordinal 
            2. quantitative variable 
               a. discrete , b. countinous
+    ex) person of "gender"(M/F) or "marriage"(S/M) or "height"(173cm,182cm...)
               
 # frequency (distribution) table 도수분포표
   a table that arranged to count each class frequency of data's values or data belongs in each divided sections of the total
@@ -62,11 +67,11 @@ variable 변수
  - measure of variability(measure of spread) 변동의 측도(산포의 측도) / range 범위 / 
    interquartile range(IQR) 사분위수범위 / percentile 백분위수 / five-number-summary 다섯 수치요약 / skewness 비대칭도(왜도)
    * skewness
-     the degree of asymmetry about a distribution of random variables(actual number).
+     the degree of asymmetry about a distribution of random variables(real number).
  @ above conceptions are related with the "distribution" (of values). 
- @ like how distribution of data is, how many observations are located in a specific section.
+ @ like how distribution of data looks like, how many observations are located in a specific section.
   
- what i want to mention shortly here is the way to get outlier(이상치). 
+ what i want to mention shortly here is the way to get the outlier(이상치). 
  
  step = 1.5*IQR
  x : observation
@@ -75,7 +80,7 @@ variable 변수
  
  # variance(*var) 분산 and standard deviation(*sd) 표준편차
  
-- variance(*var) = a square of sd 
+- variance(*var) = a square of sd 분산
  standard deviation(*sd) = an average of gaps between average and all observations.  
  
  cf. the point is when we get the sd, you should divide (n-1) instead of n.
@@ -83,7 +88,7 @@ variable 변수
  
  coefficient of variance 변동계수(변이계수)
  sometimes when comparing vars(or sds) of two data or more than that, if one data has different units of measurement with another data
- you need to adjust to each other. coefficient of variance is that.
+ you need to adjust to each other. the coefficient of variance is that.
  
  (pop) C = (var / mean) * 100(%) 
  (sample) C = (sd / mean) * 100(%)
@@ -95,7 +100,7 @@ variable 변수
  - statistical experiment 통계적 실험
  
  - sample space 표본 공간
- the set about all possible results in a statistical experiment
+ a set about all possible results in a statistical experiment
  a side of elements : finite , countably infinte -> discrete sample space
                       uncountably infinite -> continous sample space
  
@@ -104,14 +109,14 @@ variable 변수
  
  - probability 확률 
  
- - classical definition
+ - classical definition 고전적 정의
  P(A) = the count of event's set elements / the count of sample's set elements
  
- - relative numerical definition
- a probability of event A's occurrence is a rate of event A's occurrence 
- under a statistical experiment repeats infinitely in the same condition
+ - relative numerical definition 상대도수적 정의
+  a probability of event A's occurrence is a rate of event A's occurrence 
+  under statistical experiments repeat infinitely in a same condition
  
- - axiomatic definition
+ - axiomatic definition 공리적 정의
  
  # calculation of probability 
  
@@ -141,25 +146,35 @@ variable 변수
    function to match one real value to each element of sample space
    
    when the values of random variable are countable, discrete random variable. 이산형 확률 변수
-   when the values of random variable are uncountable, continous random variable. 연속형 확률 변수
-   (probability distribution function / cumulative distribution function)
-   @ uniform distribution 균등함수
+    - probability distribution function 확률 분포 함수 
+    - cumulative distribution function 누적 확률 분포 함수
+   when the values of random variable are uncountable, continuous random variable. 연속형 확률 변수
+    in this case, infinite values can be possible the values. so it's meaningless to calculate a point, but 
+    mostly the values for a specific interval have a meaning. sometimes, we gatta use the integral or the uniform distribution 
+    when cases that the interval values are too ambiguous to get the results.    
+   @ uniform distribution 균등함수     
   
   # expected value of random variable 기대값
     - discrete E(g(X)) = ∑g(xi)f(xi)
     - continous E(g(X)) = ∫g(x)f(x)dx
   
-  # variance of random variable X
-   Var(X) = E((X-μ)**2)
+  # the variance of random variable X 확률변수 X의 분산
+   var(X) = E((X-μ)**2)     
    
-  # the variance of X
+  # the variance of X X의 분산
    Var(X) = E[(X-μ)**2] = E(X**2)-μ**2
+   
+    - E(X) = expected value, var(X) = variace, 
+      E(aX+b) = aE(X) +b
+      var(aX+b) = a**2var(X)
   
-  # standartdized random variable
-    
- 
+  # the standardized random variable 표준화된 확률변수
+    - μ = mean, σ=√var(X)=sd, if it's gonna standardized
+     
+      Z(random variable, μ=0, var(X)=1) = X-μ / σ
  
 4. probability distribution and sample distribution
+  
 
 5. estimate 추정
    to estimate from the sample data to the parameter 
@@ -169,12 +184,13 @@ variable 변수
   # testing 검정
    to test the validity of a claim of the population by samples
    
-   # point estimate
+   # point estimate 점 추정
     it suggests only a value for a parameter
    
-   # interval estimate
+   # interval estimate 구간 추정
     it suggests a interval or a range. it also brings you the parameter's estimate value and the precision(정확도). 
-   
+    
    # confidence interval
+     
     
    
