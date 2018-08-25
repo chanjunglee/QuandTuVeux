@@ -1,1 +1,17 @@
 통계학 개론's summary
+
+5. estimate 추정
+   to estimate from the sample data to the parameter 
+  # estimator 추정량
+   the statistic in a estimating
+  
+  # testing 검정
+   to test the validity of a claim of the population by samples
+   
+   # point estimate 점 추정
+    it suggests only a value for a parameter
+   
+   # interval estimate 구간 추정
+    it suggests a interval or a range. it also brings you the parameter's estimate value and the precision(정확도). 
+    
+   # confidence interval
