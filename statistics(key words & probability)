@@ -176,14 +176,28 @@ variable 변수
 4. probability distribution and sample distribution
     
     - discrete probability distribution
-      1. binomial distribution, 2. hypergeometric distribution, 3. poisson distribution
+      1. binomial distribution 이항분포 
+      2. hypergeometric distribution 초기하분포
+      3. poisson distribution 포아송분포
     - continuous probability distribution
-      1. normal distribution
+      1. normal distribution 정규분포
      
    # binomal distribution
-    * bermoulli trial
+    * bernoulli trial
+      the expetiment that has a result just two, true(1) or false(0) under the same success probability. 
+      if p is defined a success probability in this trial, 
+      then, the distribution of bernoulli random variable X is as follows
       
-     
-   
-
-   
+      P(X=x)=p**x(1-p)**(1-x), x=0,1
+      
+      like this, when it's repeated a bernoulli trial independently, the distribution of X(=count of success) 
+      is called the binomial distribution and it's marked B(n,p)
+              
+      P(X=x)=(n p)p**x(1-p)**n-x, x=0,1,2,3..n
+      mean : E(X)=np , var : Var(x)=np(1-p) , n : number of trials , p : probability of success
+      
+   # hypergeometric distribution
+    in bernoulli experiment(1,0), attributes N = size of population , D = number of 1 in pop(N-D : 0), 
+    
+      
+      
