@@ -236,4 +236,11 @@ variable 변수
       mean  = m , var = m
     
     # normal distribution
-      mostly 
+      mostly, the continuous probability data that observed around us are distributed near to mean(avg),
+      the farther away from the mean, data diminish and the distribution is symmetrical in relation to the average.
+      it draws a bell shape(distribution). it's called the normal distribution function or the Gaussian distribution function
+      
+      f(x) = 1 / √2πσ *exp[-((x-μ)**2 / 2*(σ**2))], -∞ < x < ∞  (μ : mean , σ : )
+    
+      
+  
