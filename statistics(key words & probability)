@@ -179,6 +179,7 @@ variable 변수
       1. binomial distribution 이항분포 
       2. hypergeometric distribution 초기하분포
       3. poisson distribution 포아송분포
+    
     - continuous probability distribution
       1. normal distribution 정규분포
      
@@ -193,11 +194,46 @@ variable 변수
       like this, when it's repeated a bernoulli trial independently, the distribution of X(=count of success) 
       is called the binomial distribution and it's marked B(n,p)
               
-      P(X=x)=(n p)p**x(1-p)**n-x, x=0,1,2,3..n
+      P(X=x)=(nCx)p**x(1-p)**n-x, x=0,1,2,3..n (nCr : at C is combination)
       mean : E(X)=np , var : Var(x)=np(1-p) , n : number of trials , p : probability of success
       
    # hypergeometric distribution
-    in bernoulli experiment(1,0), attributes N = size of population , D = number of 1 in pop(N-D : 0), 
+      in bernoulli experiment(1,0), attributes N = size of population , D = number of 1 in pop(N-D : 0), 
+      n = size of sample, x = 1's number in sample,
     
+      P(X=x)=DCx * (N-D)C(n-x) / NCn , x=0,1,2,3..n (DCx ,(N-D)C(n-x) , NCn : at C is combination)
+    
+    *** only, n < N , x < D (you have to caution this condition that x < D, that is "x < D" means "n-x < N-D", "n < N and n < N-D"). 
+    
+      mean : E(X) = np (only, p=D/N) , var : var(X) = np(1-p)*((N-n) / (N-1))
+      @ the var of hypergeometric distribution is multipled by finite population correction factor(유한모집단 수정계수 : ((N-n) / (N-1))). 
+      @ so if the N is bigger, this factor is much closer to 1.
       
+   # Poisson distribution
+      generally, this is used as you want to get a rarely, very small probability 
+      like the probability of seoul city's blackout in a day.
+      and it also has to be satisfied three conditions for applying :
       
+      1. independency 독립성
+        한 단위시간이나 공간에서 출현하는 성공횟수와 중복되지 않는 다른 단위시간이나 공간에서 출현하는 성공횟수는 서로 독립이다
+        the number of successes that occur in one unit time or space and the number of successes 
+        that occur in another unit time or space that do not overlap are independent of each other.
+
+      2. non- colony 비집락성
+        극히 작은 시간이나 공간에서 둘 또는 그 이상의 성공이 같이 일어날 확률은 매우 작으며 0으로 간주된다
+        the probability of two or more successes occurring in very small amounts of time or space is very small 
+        and is considered 0
+
+      3. proportional 비례성
+        단위시간이나 공간에서 성공의 평균출현횟수는 일정하며, 이는 시간이나 공간에 따라 변하지 않는다
+        the average number of occurrences of success in unit time or space is constant, which does not change with time or space.
+        
+    under those three conditions are met, the average number of occurrences of success = m ,
+    then the X of probability distribution is 
+    
+      P(X=x)=e**-m * m**x / x! , x=0,1,2...
+         
+      mean  = m , var = m
+    
+    # normal distribution
+      mostly 
