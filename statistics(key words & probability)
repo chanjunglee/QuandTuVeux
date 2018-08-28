@@ -156,7 +156,7 @@ variable 변수
   
   # expected value of random variable 기대값
     - discrete E(g(X)) = ∑g(xi)f(xi)
-    - continous E(g(X)) = ∫g(x)f(x)dx
+    - continous E(g(X)) = ∫ g(x)f(x)dx (∫ -∞ to ∞)
   
   # the variance of random variable X 확률변수 X의 분산
    var(X) = E((X-μ)**2)     
@@ -183,7 +183,7 @@ variable 변수
     - continuous probability distribution
       1. normal distribution 정규분포
      
-   # binomal distribution
+   # binomal distribution 이항분포
     * bernoulli trial
       the expetiment that has a result just two, true(1) or false(0) under the same success probability. 
       if p is defined a success probability in this trial, 
@@ -197,7 +197,7 @@ variable 변수
       P(X=x)=(nCx)p**x(1-p)**n-x, x=0,1,2,3..n (nCr : at C is combination)
       mean : E(X)=np , var : Var(x)=np(1-p) , n : number of trials , p : probability of success
       
-   # hypergeometric distribution
+   # hypergeometric distribution 초기하분포
       in bernoulli experiment(1,0), attributes N = size of population , D = number of 1 in pop(N-D : 0), 
       n = size of sample, x = 1's number in sample,
     
@@ -209,7 +209,7 @@ variable 변수
       @ the var of hypergeometric distribution is multipled by finite population correction factor(유한모집단 수정계수 : ((N-n) / (N-1))). 
       @ so if the N is bigger, this factor is much closer to 1.
       
-   # Poisson distribution
+   # Poisson distribution 포아송분포
       generally, this is used as you want to get a rarely, very small probability 
       like the probability of seoul city's blackout in a day.
       and it also has to be satisfied three conditions for applying :
@@ -228,19 +228,48 @@ variable 변수
         단위시간이나 공간에서 성공의 평균출현횟수는 일정하며, 이는 시간이나 공간에 따라 변하지 않는다
         the average number of occurrences of success in unit time or space is constant, which does not change with time or space.
         
-    under those three conditions are met, the average number of occurrences of success = m ,
+    those three conditions are met, the average number of occurrences of success = m ,
     then the X of probability distribution is 
     
       P(X=x)=e**-m * m**x / x! , x=0,1,2...
          
       mean  = m , var = m
     
-    # normal distribution
+    # normal distribution (*ND) 정규분포
       mostly, the continuous probability data that observed around us are distributed near to mean(avg),
       the farther away from the mean, data diminish and the distribution is symmetrical in relation to the average.
       it draws a bell shape(distribution). it's called the normal distribution function or the Gaussian distribution function
       
-      f(x) = 1 / √2πσ *exp[-((x-μ)**2 / 2*(σ**2))], -∞ < x < ∞  (μ : mean , σ : )
-    
+      f(x) = 1 / √2πσ *exp[-((x-μ)**2 / 2*(σ**2))], -∞ < x < ∞  (μ : mean , σ : sd)
+      
+      if random variable X follows the upper normal distribution, it marks X~N(μ, σ**2). the characteristics of this are as follows:
+      
+      1. it's the continuous function of the bell shape
+      2. it's symmetrical in relation to the average. 
+      3. there are infinitely possible values as per μ or σ.
+      4. normal random variables have most of the values around the mean, 
+         and fewer than three times the sd from the mean to the left
+         (it most commonly used a distribution function, 
+         when X is the ND variable in N(μ, σ**2), the probability of the section [a,b](P(a <= X <= b)) is f(x) 's total area 
+         surrounding within the x-axis, a, b.
+         
+         P( a <= X <= b ) = ∫ 1 / √2πσ *exp[-((x-μ)**2 / 2*(σ**2))]*dx (∫ a to b) 
+         
+         but it's so much harder work to get this area. fortunately, if using the standard normal distribution (*STD),
+         that is if    X = N(μ, σ**2) convert to Z(=STD variable) = (X-μ) / σ         <- it's called the standardization
+         then Z follows a normal distribution with an average of 0 and a sd of 1 , mean =0 , sd = 1 ( N(0,1) ) 
+         
+         X is N(μ, σ**2),
+            Z = (X-μ) / σ (the standardization)
+            
+         and probability is like this.
+            
+            P(a < X < b) = P( (a-μ) / σ < Z < (b-μ) / σ )
+            
+      # sampling distribution
+        
+         
+         
+         
       
   
