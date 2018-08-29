@@ -184,7 +184,7 @@ variable 변수
       1. normal distribution 정규분포
      
    # binomal distribution 이항분포
-    * bernoulli trial
+    * bernoulli trial 베르누이 시행
       the expetiment that has a result just two, true(1) or false(0) under the same success probability. 
       if p is defined a success probability in this trial, 
       then, the distribution of bernoulli random variable X is as follows
