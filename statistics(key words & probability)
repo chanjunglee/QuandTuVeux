@@ -267,8 +267,8 @@ variable 변수
             P(a < X < b) = P( (a-μ) / σ < Z < (b-μ) / σ )
             
       # sampling distribution
+        statistical inference : to process that extracts samples from pop and inferences to pop's values based on it 
         
-         
          
          
       
