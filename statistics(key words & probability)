@@ -268,8 +268,13 @@ variable 변수
             
       # sampling distribution
         statistical inference : to process that extracts samples from pop and inferences to pop's values based on it 
+        the point is the more sample follow the parameter of pop. the mean of total's sample is the same with the mean of pop.
+        (this is called the unbaised estimator.) the sampling distrubution of sample means draws a ND distribution, surely,
+        if the range of pop is so much big, it's hard to inference to parameters though.
         
-         
+         X_hat ~ N(μ, (σ**2/n))
+        
+      
          
       
   
