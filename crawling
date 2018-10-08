@@ -1,0 +1,304 @@
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
+import requests
+import re
+import time
+
+#html=urlopen("https://www.thecomenstay.com/house/sharehouse-hamkke-jongno-branch")
+#bsObj=BeautifulSoup(html,"html.parser")
+
+print(bsObj)# .find("div",{"class":"house-info"}))
+
+# url='https://www.thecomenstay.com/house/sharehouse-hamkke-jongno-branch'
+# html=requests.get(url).text
+
+print(html)
+
+headers={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'}
+url=''
+html=requests.get(url,headers=headers).text
+time.sleep(3)
+print(html)
+
+bsObj=BeautifulSoup(html,"html.parser")
+
+name=bsObj.find("div",{"class":"book-it-top-title"}).get_text()
+print(name)
+text=bsObj.findAll("div",{"class":"house-info"})#.find_all("div"):
+print(text)
+
+for ls in bsObj.find("div",{"class":"house-info"}).find_all("div", recursive=False):
+    print(ls.get_text())
+
+
+# 크롤링 도전 과제
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
+import requests
+import re
+import time
+
+headers={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'}
+url1='https://www.thecomenstay.com/search'
+html1=requests.get(url1,headers=headers).text
+time.sleep(3)
+print(html1)
+
+bsObj1=BeautifulSoup(html1,"html.parser")
+print(bsObj1)
+
+
+
+
+
+
+# 수업
+with open("D:\\ecologicalpyramid\\ecologicalpyramid.html") as a:
+    soup = BeautifulSoup(a,"html.parser")
+
+rs=soup.find_all(class_="number")#.get_text()
+rs[2].get_text()
+print(rs)
+
+import urllib.request
+from bs4 import BeautifulSoup
+
+def ebs_scroll():
+    list_url='http://home.ebs.co.kr/ladybug/board/6/10059819/oneBoardList?hmpMnuId=106'
+    url=urllib.request.Request(list_url)
+    result=urllib.request.urlopen(url).read().decode("utf-8")
+    soup=BeautifulSoup(result,"html.parser")
+    result2=soup.find_all('p',class_="con")
+
+
+    for i in result2:
+        print(i.get_text().strip())
+    # return soup.find_all('p', class="con")
+
+
+print(ebs_scroll())
+
+
+
+e_list = []
+list_url = "http://home.ebs.co.kr/ladybug/board/6/10059819/oneBoardList?hmpMnuId=106"
+url = urllib.request.Request(list_url)
+result = urllib.request.urlopen(url).read().decode("utf-8")
+soup = BeautifulSoup(result, "html.parser")
+for i in soup.find_all('p', class_="con"):  # i안에 리스트가 담겨있음
+    e_list.append(i.get_text().strip())
+    print(e_list)
+
+import urllib.request
+from bs4 import BeautifulSoup
+
+
+def ebs_scroll_date():
+    list_url = "http://home.ebs.co.kr/ladybug/board/6/10059819/oneBoardList?hmpMnuId=106"
+    url = urllib.request.Request(list_url)
+    result = urllib.request.urlopen(url).read().decode("utf-8")
+    soup = BeautifulSoup(result, "html.parser")
+    return soup
+
+ebs_scroll_date()
+
+ebs=ebs_scroll_date()
+for i in ebs.find_all('li', class_='spot_'):
+    print(i.find('span',class_='date').get_text(strip=True),end=' ')
+    print(i.find('p',class_='con').get_text(strip=True))
+
+# 선생님 코드
+import urllib.request
+from bs4 import BeautifulSoup
+
+def ebs_scroll_date():
+    list_url = "http://home.ebs.co.kr/ladybug/board/6/10059819/oneBoardList?hmpMnuId=106"
+    url = urllib.request.Request(list_url)
+    result = urllib.request.urlopen(url).read().decode("utf-8")
+    soup = BeautifulSoup(result, "html.parser")
+
+params1=[]
+params2=[]
+
+for link1, link2 in zip(soup.find_all('span',class_="date"),
+                        soup.find_all('p',class_='con')):
+    params1.append(link1.get_text())
+    params2.append(link2.get_text())
+
+for i1, i2 in zip(params1, params2):
+    print(i1.strip(), end='')
+    print(i2.strip())
+
+import urllib.request
+from bs4 import BeautifulSoup
+import re
+
+
+## for 문을 이용한 크롤링
+def ebs_scroll():
+    params1 = []
+    params2 = []
+    for i in range(1, 17):
+        list_url = "http://home.ebs.co.kr/ladybug/board/6/10059819/oneBoardList?c.page=" + str(
+            i) + "&hmpMnuId=106&searchKeywordValue=0&bbsId=10059819&searchKeyword=&searchCondition=&searchConditionValue=0&"
+        url = urllib.request.Request(list_url)
+        result = urllib.request.urlopen(url).read().decode("utf=8")
+        soup = BeautifulSoup(result, "html.parser")  # 파싱하기
+
+        for link1, link2 in zip(soup.find_all('span', class_="date"), soup.find_all('p', class_="con")):
+            params1.append(link1.get_text())
+            params2.append(link2.get_text().strip())
+
+        f = open("d:\\data\\data7.txt", 'a', encoding='UTF-8')
+
+        for i1, i2 in zip(params1, params2):
+            f.write("%s %s\n"%(i1, re.sub("[\r\n]",'',i2)))
+
+        f.close()
+
+
+ebs_scroll()
+
+##
+text='abcd'
+f = open('d:\\data\\mydata.txt','w',encoding='UTF-8')
+f.write(text)
+f.close()
+
+text=['aaa','bbb','ccc','ddd']
+f=open('d:\\data\\mydata.txt','w',encoding='UTF-8')
+for item in text:
+    f.write("%s\n"%item)
+f.close()
+
+
+#
+import urllib.request
+from bs4 import BeautifulSoup
+
+def ebs_scroll_date():
+    list_url = "http://home.ebs.co.kr/ladybug/board/6/10059819/oneBoardList?hmpMnuId=106"
+    url = urllib.request.Request(list_url)
+    result = urllib.request.urlopen(url).read().decode("utf-8")
+    soup = BeautifulSoup(result, "html.parser")
+
+    params1=[]
+    params2=[]
+
+    for link1, link2 in zip(soup.find_all('span',class_="date"),
+                        soup.find_all('p',class_='con')):
+
+
+    for i1, i2 in zip(params1, params2):
+        print(i1.strip(), end='')
+
+# 한겨레 신문
+def hni_scroll():
+    param1=[]
+    param2=[]
+    for i in range(15):
+        list_url='http://search.hani.co.kr/Search?command=query&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5&sort=d&period=all&media=common'
+
+    url=urllib.request.Request(list_url)
+    result=urllib.request.urlopen(url).read().decode('utf-8')
+    soup=BeautifulSoup(result,"html.parser")
+
+    for i in soup.find_all('dt'):
+        for i2, in i:
+            param1.append(i2.get('href'))
+
+    return param1
+
+hni_scroll()
+
+# 아래의 url 기사내용을 검색하시오
+def hni_scroll2():
+    import urllib.request
+    from bs4 import BeautifulSoup
+
+    list_url=hni_scroll()
+
+    for i in range(len(list_url)):
+        url=urllib.request.Request(list_url[i])
+        result=urllib.request.urlopen(url).read().decode('utf-8')
+        soup=BeautifulSoup(result,"html.parser")
+
+    h_param1=[]
+    h_param2=[]
+    for link1, link in zip(soup.find_all('p',class_="date-time"),
+                            soup.find_all('div',class_='text')):
+        h_param1.append(link1.get_text())
+        h_param2.append(link2.get_text())
+
+    for i1, i2 in zip(h_param1,h_param2):
+        print(i1.strip(),end=' ')
+        print(i2.strip())
+
+hni_scroll2()
+
+
+# 통합
+import urllib.request
+from bs4 import BeautifulSoup
+import re
+
+
+def hni_scroll():
+    params = []
+    for i in range(15):
+        list_url = "http://search.hani.co.kr/Search?command=query&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5&media=news&sort=d&period=all&datefrom=2000.01.01&dateto=2018.08.03&pageseq=1" + str(
+            i)
+
+        url = urllib.request.Request(list_url)
+        result = urllib.request.urlopen(url).read().decode("utf-8")
+        soup = BeautifulSoup(result, "html.parser")
+
+        for i in soup.find_all('dt'):
+            for i2 in i:
+                params.append(i2.get('href'))
+
+    return params
+
+
+def hni_scroll2():
+    list_url = hni_scroll()
+
+    for i in range(len(list_url)):
+        url = urllib.request.Request(list_url[i])
+        result = urllib.request.urlopen(url).read().decode("utf-8")
+        soup = BeautifulSoup(result, "html.parser")
+
+        params1 = []
+        params2 = []
+
+        for link1, link2 in zip(soup.find_all('p', class_="date-time"),
+                                soup.find_all('div', class_="text")):
+            params1.append(link1.get_text())
+            params2.append(link2.get_text())
+
+        # for i1, i2 in zip(params1, params2):
+        #     print(i1.strip(), end=' ')
+        #     print(i2.strip())
+        # 크롤링 해서 프린트 /  아래 코드는 크롤링해서 파일 저장
+
+        f = open("d:\\data\\crawling_scripts.txt", 'a', encoding='UTF-8')
+
+        for i1, i2 in zip(params1, params2):
+            f.write("%s %s\n" % (i1, re.sub("[\r\n]", '', i2)))
+
+        f.close()
+
+hni_scroll2()
+
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import re
+
+url='http://www.hani.co.kr/arti/economy/it/855916.html'
+
+bsObj=BeautifulSoup(url,"html.parser")
+name=bsObj.find("div",{"class":"book-it-top-title"}).get_text()
+
+
+
+
